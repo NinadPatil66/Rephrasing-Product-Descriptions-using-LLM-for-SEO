@@ -21,8 +21,8 @@ accelerate - Helps to train and use Transformers models more efficiently on diff
 4) Numbers, Entities names preserved
 
 # Optimizations - 
-1) Batch API
-2) Prompt Caching
+1) Batch API - Reduces HTTP requests to OpenAI. In one request, send multiple rows to process. As the records are processed asynchronously on the OpenAI servers, this reduces the API cost by ~50%.  
+2) Prompt Caching - Automatically applied by OpenAI, when it detects repeatable patterns in [System + User Prompt]
 
 # Important Functions - 
 1) tokenizer.apply_chat_template() - Take a list of message dictionaries and format them into a single string (or a sequence of tokens/token IDs) that adheres to the specific chat format expected by the model.
