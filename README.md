@@ -11,7 +11,7 @@ Rephrasing 7000+ product descriptions using OpenAI API to optimize them for SEO.
 # LLMs Used - 
 1) Open Source Models - Mistral-7B-Instruct, Qwen2-7B-Instruct, Phi-3-medium-128k-instruct, DeepSeek-LLM-7B-Chat
 2) Gated Models - Llama-3-7B, Nous-Hermes-2-Mistral-7B-DPO
-3) Closed - GPT-4o-mini
+3) Closed - GPT-4o-mini, GPT-4.1-mini
 
 # Model Evaluation - 
 1) Semantic Similarity (BERTScore, Cosine Similarity)
