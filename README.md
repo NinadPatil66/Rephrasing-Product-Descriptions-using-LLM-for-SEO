@@ -1,18 +1,17 @@
 # Project Title - Rephrasing Product Descriptions using LLMs for SEO
-Rephrasing 2000+ product descriptions using OpenAI API to optimize them for SEO
+Rephrasing 7000+ product descriptions using OpenAI API to optimize them for SEO.
 
 # Main Libraries - 
-AutoTokenizer - Used to load the appropriate tokenizer for a given pre-trained model, converting text into a format that the model can understand.
-AutoModelForCausalLM - Used to load pre-trained causal language models (models that predict the next token in a sequence, often used for text generation).
-BitsAndBytesConfig - Used to configure quantization, a technique to reduce the memory footprint and computational cost of large models by representing their weights with fewer bits.
-accelerate - Helps to train and use Transformers models more efficiently on different hardware setups, including distributed training and mixed precision.
+1) Transformers - (AutoTokenizer, AutoModelForCasualLM, BitsAndBytesConfig)
+2) Pandas, Scikit-learn, PyTorch
+3) Google Colab
+4) OpenAI
+5) Pickle, Rouge Scorer, Spacy
 
 # LLMs Used - 
-1) GPT-4o-mini
-2) Mistral-7B-Instruct
-3) Qwen2-7B-Instruct
-4) Phi-3-medium-128k-instruct
-5) DeepSeek-LLM-7B-Chat
+1) Open Source Models - Mistral-7B-Instruct, Qwen2-7B-Instruct, Phi-3-medium-128k-instruct, DeepSeek-LLM-7B-Chat
+2) Gated Models - Llama-3-7B, Nous-Hermes-2-Mistral-7B-DPO
+3) Closed - GPT-4o-mini
 
 # Model Evaluation - 
 1) Semantic Similarity (BERTScore, Cosine Similarity)
@@ -20,12 +19,18 @@ accelerate - Helps to train and use Transformers models more efficiently on diff
 3) Text Length Ratio
 4) Numbers, Entities names preserved
 
-# Optimizations - 
-1) Batch API - Reduces HTTP requests to OpenAI. In one request, send multiple rows to process. As the records are processed asynchronously on the OpenAI servers, this reduces the API cost by ~50%.  
-2) Prompt Caching - Automatically applied by OpenAI, when it detects repeatable patterns in [System + User Prompt]
+# Workflow - 
+1) Loading the file containing the product descriptions.
+2) Clean the dataset - Removing the HTML format in the product description text.
+3) Prompt engineering - generating appropriate prompt and iteratevely improving it.
+5) Experimenting rephrasing with a sample of 50 product descriptions and different open-source, closed and gated LLMs.
+6) Model evaluation & iteratively improving based on the output.
+7) Final model selection & running the rephrasing process on the entire dataset.
 
-# Important Functions - 
-1) tokenizer.apply_chat_template() - Take a list of message dictionaries and format them into a single string (or a sequence of tokens/token IDs) that adheres to the specific chat format expected by the model.
+# Optimizations - 
+1) Model Quantization, Distributed Processing
+2) Batch API - Reduces HTTP requests to OpenAI. In one request, send multiple rows to process. As the records are processed asynchronously on the OpenAI servers, this reduces the API cost by ~50%.  
+3) Prompt Caching - Automatically applied by OpenAI, when it detects repeatable patterns in [System + User Prompt]
 
 # Tech Stack - 
 1) Google Colab - L4 GPU (System RAM - 53GB, GPU RAM - 22.5GB, Disk - 235GB)
@@ -34,5 +39,5 @@ accelerate - Helps to train and use Transformers models more efficiently on diff
 4) LLMs
 5) Hugging Face Transformers
 6) Prompt Engineering
-7) Make.ai
+7) n8n
 
